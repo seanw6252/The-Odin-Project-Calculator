@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: lightblue;
 }
 
 .calculator-screen {
@@ -22,17 +23,17 @@ body {
     border: solid;;
     margin-top: 35px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: lightgray;
 }
 
 .calculator-keypad {
     width: 420px;
     height: 535px;
     margin-top: 35px;
-    /* border: solid; */
-    /* border-radius: 10px; */
     display: grid;
-    /* grid-template-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
-    grid-template-rows: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -44,10 +45,16 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
+    font-size: 30px;
+    background-color: lightgray;
 }
 
-.button-text {
-    font-size: 30px;
+.button:hover {
+    background-color:darkgray;
+}
+
+.button:active {
+    background-color: gray;
 }
 
 #button-clear {
@@ -138,4 +145,18 @@ grid-row: 1 / 2;
 #button-add {
     grid-column: 4 / 5;
     grid-row: 5 / 6;
+}
+
+.screen-top-half {
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+.screen-bottom-half {
+    margin-right: 15px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    font-size: 50px;
 }
