@@ -20,8 +20,6 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
-    console.log(typeof(a));
-    console.log(typeof(b));
     switch (operator) {
         case "+":
             operator = "";
@@ -108,8 +106,10 @@ equalsButton.addEventListener('click', (e) => {
         screenBottomValue = "";
         updateBottomHalf();
     } else {
-        screenTopValue = `${screenTopValue} ${screenBottomValue} =`;
-        screenBottomValue = operate(operator, Number(screenTopValue), Number(screenBottomValue)).toString();
+        const screenTopResult = `${screenTopValue} ${screenBottomValue} =`;
+        screenTopNum = screenTopValue.slice(0, -2);
+        screenBottomValue = operate(operator, Number(screenTopNum), Number(screenBottomValue)).toString();
+        screenTopValue = screenTopResult;
         updateTopHalf();
         updateBottomHalf();
     }
